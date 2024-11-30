@@ -1,8 +1,8 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+.thumbnail img {
 
-a {
-  color: #00B7FF;
+  max-height: 150px;
+} 
+.description{
+  font-size: large;
+
 }
