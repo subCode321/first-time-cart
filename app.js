@@ -43,17 +43,19 @@ app.use((req, res, next) => {
   res.locals.csrfToken = req.csrfToken();
   next();
 });
-app.use((req,res,next) =>{
-  res.locals.login = req.isAuthenticated;
-  next();
 
-})
 
 app.use(flash()); 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use((req,res,next) =>{
+  res.locals.login = req.isAuthenticated();
+  next();
+
+})
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);
